@@ -141,6 +141,20 @@ Then pass the `resource_dir` with a flag in your `.bazelrc`:
 build:clang-tidy --@bazel_clang_tidy//:clang_tidy_resource_dir=//path/to:resource_dir
 ```
 
+### applying tidy fixes
+
+clang-tidy fixes can be applied with
+
+```sh
+bazel run @bazel_clang_tidy//:apply-fixes
+```
+
+As with running clang-tidy, the binary target and config file can be specified with
+`--@bazel_clang_tidy//:clang_tidy_executable` and
+`--@bazel_clang_tidy//:clang_tidy_config`. Similarly, clang-apply-replacements
+can be specified with
+`--@bazel_clang_tidy//:clang_apply_replacements_executable`.
+
 ## Features
 
 - Run clang-tidy on any C/C++ target
